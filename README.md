@@ -19,7 +19,7 @@ This tutorial is intended for Ubuntu 16.04 Linux, but can work on other Linux ve
 >> sudo service mongodb start
 >> sudo systemctl enable mongodb
 >>> Note that the last command enables mongodb to restart itself when you reboot your server, see:
->>> [Troubleshooting mongodb](#mongodbtroubles)
+>>> [troubleshooting-mongodb](#mongodbtroubles)
 
 #### Third step: Install the required NodeJS components & backend
 > Start Ubuntu and open your terminal by pressing CTRL+T. Enter or copy paste the following command:
@@ -31,7 +31,7 @@ This tutorial is intended for Ubuntu 16.04 Linux, but can work on other Linux ve
 >
 > Then just navigate with your browser to your **http://localhost** and you can experience the MEAN stack CRUD by clicking them buttons .
 
-#### [Troubleshooting mongodb][mongodbtroubles]
+[troubleshooting-mongodb][#mongodbtroubles]
 >Make sure you have enough hard disk on your server before  proceeding, mongo failed to start silently as my tiny virtualbox instance ran out of diskspace, beware of this.
 >
 > Make sure you don't have apache2 or nginx running under some other user, by checking with 
