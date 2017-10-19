@@ -46,7 +46,7 @@ This tutorial is intended for Ubuntu 16.04 Linux, but can work on other Linux ve
 > Make sure you don't have apache2 or nginx running under some other user, by checking with 
 > **sudo ps aux |grep apache2** to see if there are any processes running. A nice way of shutting apache down for example is **sudo service apache2 stop** but this is the part where GoogleFu is important to master.
 > 
-You do a quick test of your MongoDB installation by running: npm install --save mongodb incase you haven't cloned this git repository yet. After that operation is complete, put the code snippet below this paragraph into index.js and run **sudo node index.js** If the result is 'database connection OK' then your MongoDB installation was succesfull and you're ready to party.
+> You can do a quick test of your MongoDB installation by running: npm install --save mongodb incase you haven't cloned this git repository yet. After that operation is complete, put the code snippet below this paragraph into index.js and run **sudo node index.js** If the result is 'database connection OK' then your MongoDB installation was succesfull and you're ready to party.
 
 ```javascript
 var MongoClient = require('mongodb').MongoClient;
