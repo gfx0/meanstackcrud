@@ -39,7 +39,7 @@ This tutorial is intended for Ubuntu 16.04 Linux, but can work on other Linux ve
 > 
 You do a quick test of your MongoDB installation by running: npm install --save mongodb incase you haven't cloned this git repository yet. After that operation is complete, put the code snippet below this paragraph into index.js and run **sudo node index.js** If the result is 'database connection OK' then your MongoDB installation was succesfull and you're ready to party.
 
-> ```js
+```javascript
 var MongoClient = require('mongodb').MongoClient;
 MongoClient.connect('mongodb://127.0.0.1:27017/test', function >(err, db) {
   if (err) { throw err; }
