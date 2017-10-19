@@ -10,28 +10,32 @@ This tutorial is intended for Ubuntu 16.04 Linux, but can work on other Linux ve
 #### First step: Install the operating system & the NodeJS toolset
 > Download and install the Ubuntu Linux Operating System (Mine was Ubuntu 16.04) and install Node & NPM.
 >> sudo apt-get update
-
+>>
 >> sudo apt-get install nodejs
-
+>>
 >> sudo apt-get install npm
-
+>>
 #### Second step: Install the database (MongoDB) to connect to later with NodeJS
 > It is important to understand that MongoDB is it's own program, and NodeJS has another NPM package called 'mongodb' as well which will be interface between the actual running Linux MongoDB program and the NodeJS JavaScript based server application.
 >> sudo apt-get install mongodb
-
+>>
 >> sudo service mongodb start
-
+>>
 >> sudo systemctl enable mongodb
-
+>>
 >>> Note that the last command enables mongodb to restart itself when you reboot your server,
 >>> see the section about Troubleshooting MongoDB for more advice if you run into trouble.
 
 #### Third step: Install the required NodeJS components & backend
 > Start Ubuntu and open your terminal by pressing CTRL+T. Enter or copy paste the following command:
 >> cd ~ 
+>>
 >> git clone https://github.com/gfx0/meanstackcrud.git
+>>
 >> cd meanstackcrud
+>>
 >> npm start
+>>
 >>>You might be asked for sudo passwords, that's because we're using the port 80 to be able to only write localhost into the browser without that pesky extra number typing from the port numbers in localhost:3000 :P
 >
 > Then just navigate with your browser to your **http://localhost** and you can experience the MEAN stack CRUD by clicking them buttons .
