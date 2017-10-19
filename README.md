@@ -17,6 +17,7 @@ This tutorial is intended for Ubuntu 16.04 Linux, but can work on other Linux ve
 >>
 #### Second step: Install the database (MongoDB) to connect to later with NodeJS
 > It is important to understand that MongoDB is it's own program, and NodeJS has another NPM package called 'mongodb' as well which will be interface between the actual running Linux MongoDB program and the NodeJS JavaScript based server application.
+>> For Linux:
 >> sudo apt-get install mongodb
 >>
 >> sudo service mongodb start
@@ -25,6 +26,16 @@ This tutorial is intended for Ubuntu 16.04 Linux, but can work on other Linux ve
 >>
 >>> Note that the last command enables mongodb to restart itself when you reboot your server,
 >>> see the section about Troubleshooting MongoDB for more advice if you run into trouble.
+>>
+>> For MacOS:
+>>
+>>> Simply run: **brew install mongodb**
+>>> and if you get errors, try: sudo chown -R $(whoami) /usr/local/var/homebrew
+>>> and/or sudo chown -R $(whoami) /usr/local/Homebrew/
+>>> After all is complete, run **sudo brew services start mongodb** and your mongodb MacOS installation is complete :)
+>>
+>>
+
 
 #### Third step: Install the required NodeJS components & backend
 > Start Ubuntu and open your terminal by pressing CTRL+T. Enter or copy paste the following command:
@@ -45,7 +56,7 @@ This tutorial is intended for Ubuntu 16.04 Linux, but can work on other Linux ve
 >
 > Make sure you don't have apache2 or nginx running under some other user, by checking with 
 > **sudo ps aux |grep apache2** to see if there are any processes running. A nice way of shutting apache down for example is **sudo service apache2 stop** but this is the part where GoogleFu is important to master.
-> 
+>
 > You can do a quick test of your MongoDB installation by running: npm install --save mongodb incase you haven't cloned this git repository yet. After that operation is complete, put the code snippet below this paragraph into index.js and run **sudo node index.js** If the result is 'database connection OK' then your MongoDB installation was succesfull and you're ready to party.
 
 ```javascript
