@@ -17,7 +17,8 @@ This tutorial is intended for Ubuntu 16.04 Linux, but can work on other Linux ve
 >>
 #### Second step: Install the database (MongoDB) to connect to later with NodeJS
 > It is important to understand that MongoDB is it's own program, and NodeJS has another NPM package called 'mongodb' as well which will be interface between the actual running Linux MongoDB program and the NodeJS JavaScript based server application.
->> For Linux:
+>> For **Linux**:
+>>
 >> sudo apt-get install mongodb
 >>
 >> sudo service mongodb start
@@ -27,7 +28,7 @@ This tutorial is intended for Ubuntu 16.04 Linux, but can work on other Linux ve
 >>> Note that the last command enables mongodb to restart itself when you reboot your server,
 >>> see the section about Troubleshooting MongoDB for more advice if you run into trouble.
 >>
->> For MacOS:
+>> For **MacOS**:
 >>
 >>> Simply run: **brew install mongodb**
 >>> and if you get errors, try: sudo chown -R $(whoami) /usr/local/var/homebrew
