@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MEAN Stack CRUD by Jani M&auml;kinen</title>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+<script src="./js/app.js"></script>
+<script src="./js/controllers.js"></script>
+</head>
+<body ng-app="meanstackapp">
+
+  <div class="container" style="margin: 3vw;">
+    <div class="jumbotron">
+      <h2>MEAN Stack with CRUD</h2>
+      <p>This is a simple responsive app with the ability to store data persistently into a database with SPA capabilities from Angular 1.</p>
+    </div>
+
+    <!--
+      Create a user into the DB.
+    -->
+    <div ng-controller="CreateUserToDatabaseCtrl">
+        <div class="panel panel-default">
+          <div class="panel-heading"><b>C</b>reate username to DB:</div>
+          <div class="panel-body">
+            <label>Username to add:
+              <input type="text" minlength="3" maxlength="32" ng-model="userNameToAdd"/>
+            </label>
+            <button type="button" class="btn-lg btn-success" ng-click="createUserToDatabase();">Add username to DB</button>
+          </div>
+        </div>
+      </div>
+
+    <!--
+      Read users from DB.
+    -->
+    <div ng-controller="ReadUsersInDatabaseCtrl">
+      <div class="panel panel-default">
+        <div class="panel-heading"><b>R</b>ead usernames from DB:</div>
+        <div class="panel-body">
+          <p>Users in database:</p>
+          <div ng-repeat="user in dbUsers">Username: {{user.username}} </div>
+          <button type="button" class="btn-lg btn-success" ng-click="readUsersInDatabase();">Refresh list DB</button>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      Update user data in DB.
+    -->
+    <div ng-controller="UpdateUserDataInDatabaseCtrl">
+      <div class="panel panel-default">
+        <div class="panel-heading"><b>U</b>pdate username in DB:</div>
+        <div class="panel-body">
+            <label>Username to update:
+              <input type="text" minlength="3" maxlength="32" ng-model="userNameToUpdate"/>
+            </label>
+            <label>New username:
+              <input type="text" minlength="3" maxlength="32" ng-model="newUpdatedUserName"/>
+            </label>
+          <button type="button" class="btn-lg btn-success" ng-click="updateUserName();">Update username</button>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      Delete one user from DB.
+    -->
+    <div ng-controller="DeleteUserFromDatabaseCtrl">
+      <div class="panel panel-default">
+        <div class="panel-heading"><b>D</b>elete usernames from DB:</div>
+        <div class="panel-body">
+          <label>Username to delete:
+            <input type="text" minlength="3" maxlength="32" ng-model="userNameToDelete"/>
+          </label>
+          <button type="button" class="btn-lg btn-success" ng-click="deleteUserFromDatabase();">Delete username from DB</button>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      A very simple AngularJS demo.
+    -->
+    <div ng-controller="AngularButtonClickCounter">
+      <div class="panel panel-default">
+        <div class="panel-heading">AngularJS function connection:</div>
+        <div class="panel-body">
+          <button class="btn-lg btn-success" ng-click="clickCountIncrease();">
+          Click count: {{clickCount}}
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
