@@ -82,6 +82,11 @@ The end result will be a basic starting point for a MongoDB, Express, Angular an
 
 > Then just navigate with your browser to your **http://localhost** and you can experience the MEAN stack CRUD by clicking on the various buttons available on the bootstrap UI.
 
+
+# Congratulations! You have a MEAN Stack now! :)
+![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+
+----
 #### Troubleshooting MongoDB
 >Make sure you have enough hard disk on your server before  proceeding, mongo failed to start silently as my tiny virtualbox instance ran out of diskspace, beware of this.
 >
