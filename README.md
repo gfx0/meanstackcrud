@@ -1,4 +1,4 @@
-## MEAN Stack CRUD Tutorial by Jani Makinen (2017) ##
+## MEAN Stack CRUD example (updated 2018) ##
 
 This tutorial is intended for Linux, Windows or MacOS.
 
