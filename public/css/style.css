@@ -1,0 +1,12 @@
+.crudbutton {
+    float: right;
+    width: 25vw;
+}
+
+input {
+    width: 25vw;
+}
+
+.result {
+    font-weight: bold;
+}

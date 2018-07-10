@@ -17,22 +17,24 @@ app.use(bodyParser.json());
 dbclient.connect('mongodb://127.0.0.1:27017/test', function (err, db) {
   if (err) { throw err; }
   thedb = db;
-  console.log("Database connection OK.");
+  console.log("Database connection established, ready for CRUDding :)");
 });
 
 //
 // CRUD - A simple database create, read, update, delete interface.
 //
-app.post('/createuser', function(req, res) {
+app.post('/users', function(req, res) {
   console.log(req.body.username);
   thedb.collection('users')
   .insertOne( { 'username': req.body.username },
     function(err, result) {
-      res.status(200).send();
+      if ( err ) {  res.status(500).send( {error: 'Error creating a user :('} ); }
+      else
+        res.status(200).send();
     });
 });
 
-app.get('/readusers', function(req, res) {
+app.get('/users', function(req, res) {
   
   var cursor = thedb.collection('users').find( );
   var usersNowInDatabase = [];
@@ -40,29 +42,41 @@ app.get('/readusers', function(req, res) {
      if (doc != null) {
         console.log("user in db: ", doc);
         usersNowInDatabase.push(doc);
-     } else {
+     } else
         res.json(usersNowInDatabase);
-     }
   });
 });
   
-app.post('/updateuser', function(req, res) {
+app.put('/users', function(req, res) {
   console.log("Updating username: " + req.body.username + " to " + req.body.newusername);
   thedb.collection('users')
   .update( { 'username' : req.body.username }, {$set:{username: req.body.newusername} },
   function(err, result) {
-    if ( err ) { throw err; }
-    res.status(200).send();
+    if ( err ) {  res.status(500).send( {error: 'Error updating username :('} ); }
+    else
+      res.status(200).send();
   });
 });
 
-app.post('/deluser', function(req, res) {
-  console.log("Trying to delete username: ", req.body.username);
+//NOTE: The DELETE verb in Angular 1 does not carry a req.body object.
+app.delete('/users', function(req, res) {
+  //NOTE: The delete should be ID based, not name. This is for demo purposes.
+  console.log('Deleting username:' + JSON.stringify(req.query));
   thedb.collection('users')
-  .deleteOne( { 'username': req.body.username },
+  .deleteOne( { 'username': req.query.username },
     function(err, result) {
-      res.status(200).send();
+      if ( err ) { res.status(500).send( {error: 'Error with username :('} ); }
+      else
+        res.status(200).send();
     });
+});
+
+//This is for resetting the DB if so desired :)
+app.delete('/deleteallusers', function(req, res) {
+  console.log('Deleting all users from the DB...');
+  thedb.collection('users')
+    .remove();
+  res.status(200).send();
 });
 
 // Incase the user wanders off to somewhere where he shouldn't.
@@ -70,4 +84,4 @@ app.use(function (req, res, next) {
   res.status(404).send("404 :3 These are not the pages you were looking for...");
 });
 
-app.listen(80, function(){ console.log("NodeJS Server is now listening on port 80..."); } );
+app.listen(80, function() { console.log("MEAN Stack Tutorial NodeJS Server active on port 80..."); } );

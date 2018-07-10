@@ -1,22 +1,34 @@
 ## MEAN Stack CRUD Tutorial by Jani Makinen (2017) ##
 
-This tutorial is intended for Ubuntu 16.04 Linux, but can work on other Linux versions as well. You can install Oracle VirtualBox on Windows or MacOS and add Ubuntu on it for free to follow this tutorial if you wish. All software that is used is free & open source. The end result will be a basic starting point for a MongoDB, Express, Angular and NodeJS application with a rather... crude... implementation of CRUD.
+This tutorial is intended for Linux, Windows or MacOS.
+
+All software used is free & open source.
+
+The end result will be a basic starting point for a MongoDB, Express, Angular and NodeJS application with a simple CRUD implementation ready out of the box.
 
 > **Requirements to succeed:** 
 > * basic knowledge of the Linux shell
 > * basic understanding of JavaScript
+> * linux, mac or windows operating system
+> * [MongoDB install](https://www.mongodb.com/download-center#community)ed on your operating system
 > * 10 to 15 minutes of your time depending on your Internet connection
 
-#### First step: Install the operating system & the NodeJS toolset
-> Download and install the Ubuntu Linux Operating System (Mine was Ubuntu 16.04) and install Node & NPM.
+#### First step: Install the NodeJS toolset
+> Linux (eg. Ubuntu)
 >> sudo apt-get update
 >>
 >> sudo apt-get install nodejs
 >>
 >> sudo apt-get install npm
 >>
-#### Second step: Install the database (MongoDB) to connect to later with NodeJS
-> It is important to understand that MongoDB is it's own program, and NodeJS has another NPM package called 'mongodb' as well which will be interface between the actual running Linux MongoDB program and the NodeJS JavaScript based server application.
+> Windows & MacOS
+>> Go to [www.nodejs.org](https://nodejs.org/en/download/)
+>>
+>> Download & Install
+>>
+
+#### Second step: Install the mongodb database connection component for NodeJS
+> **It is important that you should have MongoDB preinstalled, as it is it's own program**, and NodeJS has another NPM package called 'mongodb' as well which will be interface between the actual running Linux MongoDB program and the NodeJS JavaScript based server application.
 >> For **Linux**:
 >>
 >> sudo apt-get install mongodb
@@ -35,6 +47,10 @@ This tutorial is intended for Ubuntu 16.04 Linux, but can work on other Linux ve
 >>> and/or sudo chown -R $(whoami) /usr/local/Homebrew/
 >>> After all is complete, run **sudo brew services start mongodb** and your mongodb MacOS installation is complete :)
 >>
+>>
+>> For **Windows**:
+>>
+>> Run away!
 >>
 
 
@@ -68,3 +84,5 @@ MongoClient.connect('mongodb://127.0.0.1:27017/test', function >(err, db) {
   db.close(); // Not that this db.close() is only for testing purposes, don't leave it into your code.
 });
 ```
+---
+Note: This tutorial was tested on Ubuntu 16.04 Linux, but can work on other Linux versions as well. You can install Oracle VirtualBox on Windows or MacOS and add Ubuntu on it for free to follow this tutorial if you wish. 
