@@ -50,13 +50,26 @@ The end result will be a basic starting point for a MongoDB, Express, Angular an
 >>
 >> For **Windows**:
 >>
->> Run away!
->>
+>>> After installing mongodb, make sure that this works:
+>>>
+>>> C:\Program Files\MongoDB\Server\4.0\bin\mongo.exe
+>>>
+>> ..
 
 
 #### Third step: Install the required NodeJS components & backend
-> Start Ubuntu and open your terminal by pressing CTRL+T. Enter or copy paste the following command:
+>>
+>> For **Linux & MacOS**:
+>>
+>> Open your terminal and enter or copy paste the following command:
+>>
 >> cd ~ 
+>>
+>> For **Windows** :
+>>
+>> Find a suitable folder where to go with git bash / cmd.
+>>
+>> **For all 3 OSes:**
 >>
 >> git clone https://github.com/gfx0/meanstackcrud.git
 >>
@@ -65,8 +78,9 @@ The end result will be a basic starting point for a MongoDB, Express, Angular an
 >> npm start
 >>
 >>>You might be asked for sudo passwords, that's because we're using the port 80 to be able to only write localhost into the browser without that pesky extra number typing from the port numbers in localhost:3000 :P
->
-> Then just navigate with your browser to your **http://localhost** and you can experience the MEAN stack CRUD by clicking them buttons .
+>>>
+
+> Then just navigate with your browser to your **http://localhost** and you can experience the MEAN stack CRUD by clicking on the various buttons available on the bootstrap UI.
 
 #### Troubleshooting MongoDB
 >Make sure you have enough hard disk on your server before  proceeding, mongo failed to start silently as my tiny virtualbox instance ran out of diskspace, beware of this.
